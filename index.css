@@ -99,3 +99,7 @@
 .delete-icon {
   padding: 15px;
 }
+.d-flex {
+  display: flex;
+  flex-direction: row;
+}
