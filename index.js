@@ -1,15 +1,34 @@
 let todoItemsContainer = document.getElementById("todoItemsContainer");
 
-let todoList = [
-  { text: "Learn HTML", uniqueNo: 1 },
-  { text: "Learn CSS", uniqueNo: 2 },
-  { text: "Learn JavaScript", uniqueNo: 3 },
-];
+// let todoList = [
+//   { text: "Learn HTML", uniqueNo: 1 },
+//   { text: "Learn CSS", uniqueNo: 2 },
+//   { text: "Learn JavaScript", uniqueNo: 3 },
+// ];
+
+let saveTodoButton = document.getElementById("saveTodoButton");
+saveTodoButton.onclick = function () {
+  localStorage.setItem("todoList", JSON.stringify(todoList));
+};
+
+function getTodoListFromLocalStorage() {
+  let stringifiedTodoList = localStorage.getItem("todoList");
+  let parsedTodoList = JSON.parse(stringifiedTodoList);
+
+  if (parsedTodoList === null) {
+    return [];
+  } else {
+    return parsedTodoList;
+  }
+}
+
+todoList = getTodoListFromLocalStorage();
 
 let todoCount = todoList.length;
 function onToDoStatusChanged(checkboxId, labelId) {
   let checkboxElement = document.getElementById(checkboxId);
   let labelElement = document.getElementById(labelId);
+  console.log(labelElement);
   // if (checkboxElement.checked === true) {
   //   labelElement.classList.add("checked");
   // } else {
@@ -88,7 +107,7 @@ function onAddToDo() {
     text: userInputValue,
     uniqueNo: todoCount,
   };
-
+  todoList.push(newTodo);
   createAndAppendTodo(newTodo);
   userInputElement.value = "";
 }

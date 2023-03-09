@@ -49,7 +49,7 @@
   margin-top: 10px;
   padding: 15px;
 }
-.add-todo-button {
+.button {
   color: white;
   background-color: #4c63b6;
   font-family: "Roboto";
@@ -62,6 +62,10 @@
   padding-bottom: 5px;
   padding-right: 20px;
   padding-left: 20px;
+}
+
+.button:hover {
+  cursor: pointer;
 }
 .label-container {
   background-color: #e6f6ff;
@@ -98,6 +102,9 @@
 }
 .delete-icon {
   padding: 15px;
+}
+.delete-icon:hover {
+  cursor: pointer;
 }
 .d-flex {
   display: flex;
