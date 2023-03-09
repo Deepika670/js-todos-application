@@ -2,7 +2,7 @@
 
 .todos-bg-container {
   background-color: #f9fbfe;
-  height: 100vh;
+  height: 90vh;
 }
 .todos-heading {
   text-align: center;
@@ -41,7 +41,7 @@
 }
 .todo-user-input {
   background-color: white;
-  width: 100%;
+  width: 90%;
   border-style: solid;
   border-width: 1px;
   border-color: #e4e7eb;
@@ -109,6 +109,8 @@
 .d-flex {
   display: flex;
   flex-direction: row;
+  /* padding-bottom: 5px; */
+  margin: 5px;
 }
 .checked {
   text-decoration: line-through;
